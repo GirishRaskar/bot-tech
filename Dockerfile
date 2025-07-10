@@ -15,9 +15,12 @@ RUN a2enmod rewrite
 # Copy application code into container
 COPY . /var/www/html
 
-# Set permissions for writable at root
-RUN chown -R www-data:www-data /writable \
-    && chmod -R 775 /writable
+# Set permissions for writable inside the project
+RUN chown -R www-data:www-data /var/www/html/writable \
+    && chmod -R 775 /var/www/html/writable
+
+
+    
 
 
 # Expose port 80
