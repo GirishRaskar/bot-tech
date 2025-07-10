@@ -141,7 +141,7 @@ class Thoughts extends BaseController
     public function visitCount()
     {
         $this->db = \Config\Database::connect();
-        $builder = $this->db->table('motivationVisitCount');
+        $builder = $this->db->table('motivationvisitcount');
 
         // 1. Read cookie from request
         $cookieName = 'my_device_id';
