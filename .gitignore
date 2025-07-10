@@ -1,0 +1,51 @@
+# =====================
+# CI4 Git Ignore Setup
+# =====================
+
+# 🔐 Local environment variables (DO NOT commit!)
+.env
+
+# ⚙️ CI4 writable system directories (runtime generated)
+writable/cache/
+writable/logs/
+writable/session/
+writable/uploads/
+writable/debugbar/
+
+# 🧹 Composer dependencies
+/vendor/
+composer.lock
+
+# 🧪 PHPUnit test artifacts
+phpunit.xml
+phpunit.xml.dist
+/build/
+
+# 💻 OS + IDE specific files
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+*.log
+
+# 🔧 Editor config (optional)
+*.sublime-workspace
+*.sublime-project
+*.vscode/
+
+# 🛠 Frontend build artifacts (if using npm, tailwind, vite etc.)
+node_modules/
+dist/
+build/
+public/assets/
+
+# 🧪 Environment test artifacts
+.env.testing
+
+# 🚫 Exclude SQLite/temporary DBs (if used)
+*.sqlite
+*.sqlite3
+*.db
+
+# ✍️ Optional: ignore local-only helpers or tools
+/local-scripts/
