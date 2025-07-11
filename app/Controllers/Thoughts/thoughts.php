@@ -139,37 +139,35 @@ class Thoughts extends BaseController
 
 
     public function visitCount()
-    {
-        $this->db = \Config\Database::connect();
-        $builder = $this->db->table('motivationvisitcount');
+{
+    $this->db = \Config\Database::connect();
+    $builder = $this->db->table('motivationvisitcount');
 
-        // 1. Read cookie from request
-        $cookieName = 'my_device_id';
-        $devIdentifier = 'dev_girish_123';
+    $cookieName = 'my_device_id';
+    $devIdentifier = 'dev_girish_123';
 
-        $request = \Config\Services::request();
-        $cookieValue = $request->getCookie($cookieName);
+    $request = \Config\Services::request();
+    $cookieValue = $request->getCookie($cookieName);
 
-        // log_message('debug', "Device cookie: " . ($cookieValue ?? 'none'));
-
-        // 2. Exclude visit if it's your own dev machine
-        if ($cookieValue === $devIdentifier) {
-            log_message('debug', "Visit skipped for dev identifier");
-            return; // ❌ Do not count this visit
-        }
-
-        // 3. Fetch current visit count
-        $row = $builder->get()->getRow();
-        $currentCount = $row ? $row->visit_count : 0;
-
-        // 4. Update or Insert count
-        if ($row) {
-            $builder->set('site_hits', $currentCount + 1)->update();
-            log_message('info', "Visit count updated to " . ($currentCount + 1));
-        } else {
-            $builder->insert(['site_hits' => 1]);
-            log_message('info', "Visit count initialized to 1");
-        }
+    // Skip counting if dev's own device
+    if ($cookieValue === $devIdentifier) {
+        log_message('debug', "Visit skipped for dev identifier");
+        return $this->response->setJSON(['message' => 'Dev visit ignored']);
     }
+
+    // Fetch row (assuming only one row in this table)
+    $row = $builder->get()->getRow();
+    $currentCount = $row ? $row->site_hits : 0;
+
+    if ($row) {
+        $builder->set('site_hits', $currentCount + 1)->update();
+        log_message('info', "Visit count updated to " . ($currentCount + 1));
+    } else {
+        $builder->insert(['site_hits' => 1]);
+        log_message('info', "Visit count initialized to 1");
+    }
+
+    return $this->response->setJSON(['visits' => $currentCount + 1]);
+}
 
 }

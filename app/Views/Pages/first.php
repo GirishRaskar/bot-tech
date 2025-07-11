@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Motivation Friend</title>
+  <title>Cosmic Friend</title>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
@@ -483,6 +483,11 @@
     <!-- <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav"> -->
     Your browser does not support the audio element.
   </audio>
+
+  <footer style="text-align:center; font-size:14px; padding:10px; color:#888;">
+    &copy; 2025 <strong>Bot Tech</strong> by Girish Raskar. All rights reserved.
+  </footer>
+
 
   <script>
     // Generate random stars
