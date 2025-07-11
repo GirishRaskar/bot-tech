@@ -138,36 +138,45 @@ class Thoughts extends BaseController
 //document.cookie = "my_device_id=dev_girish_123; path=/; max-age=" + 60 * 60 * 24 * 365;
 
 
-    public function visitCount()
+   public function visitCount()
 {
-    $this->db = \Config\Database::connect();
-    $builder = $this->db->table('motivationvisitcount');
+    try {
+        $this->db = \Config\Database::connect();
+        log_message('debug', 'Connected to DB');
 
-    $cookieName = 'my_device_id';
-    $devIdentifier = 'dev_girish_123';
+        $builder = $this->db->table('motivationvisitcount');
 
-    $request = \Config\Services::request();
-    $cookieValue = $request->getCookie($cookieName);
+        $cookieName = 'my_device_id';
+        $devIdentifier = 'dev_girish_123';
 
-    // Skip counting if dev's own device
-    if ($cookieValue === $devIdentifier) {
-        log_message('debug', "Visit skipped for dev identifier");
-        return $this->response->setJSON(['message' => 'Dev visit ignored']);
+        $request = \Config\Services::request();
+        $cookieValue = $request->getCookie($cookieName);
+
+        if ($cookieValue === $devIdentifier) {
+            log_message('debug', "Visit skipped for dev identifier");
+            return $this->response->setJSON(['message' => 'Dev visit ignored']);
+        }
+
+        // 👇 Always use WHERE to avoid full table update
+        $builder->where('id', 1);
+        $row = $builder->get()->getRow();
+        $currentCount = $row ? $row->site_hits : 0;
+
+        if ($row) {
+            $builder->where('id', 1)->set('site_hits', $currentCount + 1)->update();
+            log_message('info', "Visit count updated to " . ($currentCount + 1));
+        } else {
+            $builder->insert(['site_hits' => 1]);
+            log_message('info', "Visit count initialized to 1");
+        }
+
+        return $this->response->setJSON(['visits' => $currentCount + 1]);
+
+    } catch (\Throwable $e) {
+        log_message('error', 'VisitCount Error: ' . $e->getMessage());
+        return $this->response->setStatusCode(500)->setJSON(['error' => 'Visit count failed']);
     }
-
-    // Fetch row (assuming only one row in this table)
-    $row = $builder->get()->getRow();
-    $currentCount = $row ? $row->site_hits : 0;
-
-    if ($row) {
-        $builder->set('site_hits', $currentCount + 1)->update();
-        log_message('info', "Visit count updated to " . ($currentCount + 1));
-    } else {
-        $builder->insert(['site_hits' => 1]);
-        log_message('info', "Visit count initialized to 1");
-    }
-
-    return $this->response->setJSON(['visits' => $currentCount + 1]);
 }
+
 
 }
