@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cosmic Friend</title>
 
+  <link rel="icon" type="image/jpg" href="<?= base_url('public/astro.jpg') ?>">
+
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
