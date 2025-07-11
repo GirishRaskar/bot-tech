@@ -4,13 +4,21 @@
 
 # 🔐 Local environment variables (DO NOT commit!)
 .env
+.env.testing
 
 # ⚙️ CI4 writable system directories (runtime generated)
-writable/cache/
-writable/logs/
-writable/session/
-writable/uploads/
-writable/debugbar/
+writable/cache/*
+writable/logs/*
+writable/session/*
+writable/uploads/*
+writable/debugbar/*
+
+# ✅ Allow placeholder files to keep folder structure
+!writable/cache/.gitkeep
+!writable/logs/.gitkeep
+!writable/session/.gitkeep
+!writable/uploads/.gitkeep
+!writable/debugbar/.gitkeep
 
 # 🧹 Composer dependencies
 /vendor/
@@ -31,16 +39,13 @@ Thumbs.db
 # 🔧 Editor config (optional)
 *.sublime-workspace
 *.sublime-project
-*.vscode/
+.vscode/
 
 # 🛠 Frontend build artifacts (if using npm, tailwind, vite etc.)
 node_modules/
 dist/
 build/
 public/assets/
-
-# 🧪 Environment test artifacts
-.env.testing
 
 # 🚫 Exclude SQLite/temporary DBs (if used)
 *.sqlite
