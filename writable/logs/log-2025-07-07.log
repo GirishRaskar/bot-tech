@@ -1,0 +1,210 @@
+ERROR - 2025-07-07 06:51:02 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql212.infinityfree.com failed: No such host is known.  in C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql212.infinity...', 'if0_39138982', Object(SensitiveParameterValue), 'if0_39138982_po...', 3306, '', 0)
+#2 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\positive\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\positive\app\Controllers\Thoughts\thoughts.php(162): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\positive\system\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+#7 C:\xampp\htdocs\positive\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+#8 C:\xampp\htdocs\positive\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\positive\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\positive\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\positive\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql212.infinityfree.com failed: No such host is known.  in C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql212.infinity...', 'if0_39138982', Object(SensitiveParameterValue), 'if0_39138982_po...', 3306, '', 0)
+#1 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\positive\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\positive\app\Controllers\Thoughts\thoughts.php(162): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\positive\system\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+#6 C:\xampp\htdocs\positive\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+#7 C:\xampp\htdocs\positive\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\positive\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\positive\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\positive\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql212.infinityfree.com failed: No such host is known.  in C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\positive\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\positive\app\Controllers\Thoughts\thoughts.php(162): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\positive\system\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+#5 C:\xampp\htdocs\positive\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+#6 C:\xampp\htdocs\positive\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\positive\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\positive\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\positive\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-07-07 06:51:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql212.infinityfree.com failed: No such host is known. 
+[Method: POST, Route: visit-count]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `motivationVisitCount`', [], false)
+ 3 APPPATH\Controllers\Thoughts\thoughts.php(162): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-07-07 06:52:02 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql212.infinityfree.com failed: No such host is known.  in C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql212.infinity...', 'if0_39138982', Object(SensitiveParameterValue), 'if0_39138982_po...', 3306, '', 0)
+#2 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\positive\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\positive\app\Controllers\Thoughts\thoughts.php(162): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\positive\system\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+#7 C:\xampp\htdocs\positive\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+#8 C:\xampp\htdocs\positive\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\positive\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\positive\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\positive\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql212.infinityfree.com failed: No such host is known.  in C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql212.infinity...', 'if0_39138982', Object(SensitiveParameterValue), 'if0_39138982_po...', 3306, '', 0)
+#1 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\positive\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\positive\app\Controllers\Thoughts\thoughts.php(162): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\positive\system\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+#6 C:\xampp\htdocs\positive\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+#7 C:\xampp\htdocs\positive\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\positive\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\positive\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\positive\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql212.infinityfree.com failed: No such host is known.  in C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\positive\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\positive\app\Controllers\Thoughts\thoughts.php(162): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\positive\system\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+#5 C:\xampp\htdocs\positive\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+#6 C:\xampp\htdocs\positive\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\positive\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\positive\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\positive\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-07-07 06:52:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql212.infinityfree.com failed: No such host is known. 
+[Method: POST, Route: visit-count]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `motivationVisitCount`', [], false)
+ 3 APPPATH\Controllers\Thoughts\thoughts.php(162): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-07-07 07:54:44 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql212.infinityfree.com failed: No such host is known.  in C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql212.infinity...', 'if0_39138982', Object(SensitiveParameterValue), 'if0_39138982_po...', 3306, '', 0)
+#2 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\positive\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\positive\app\Controllers\Thoughts\thoughts.php(162): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\positive\system\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+#7 C:\xampp\htdocs\positive\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+#8 C:\xampp\htdocs\positive\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\positive\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\positive\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\positive\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql212.infinityfree.com failed: No such host is known.  in C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql212.infinity...', 'if0_39138982', Object(SensitiveParameterValue), 'if0_39138982_po...', 3306, '', 0)
+#1 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\positive\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\positive\app\Controllers\Thoughts\thoughts.php(162): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\positive\system\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+#6 C:\xampp\htdocs\positive\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+#7 C:\xampp\htdocs\positive\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\positive\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\positive\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\positive\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql212.infinityfree.com failed: No such host is known.  in C:\xampp\htdocs\positive\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\positive\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\positive\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\positive\app\Controllers\Thoughts\thoughts.php(162): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\positive\system\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+#5 C:\xampp\htdocs\positive\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+#6 C:\xampp\htdocs\positive\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\positive\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\positive\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\positive\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-07-07 07:54:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql212.infinityfree.com failed: No such host is known. 
+[Method: POST, Route: visit-count]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `motivationVisitCount`', [], false)
+ 3 APPPATH\Controllers\Thoughts\thoughts.php(162): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 08:34:47 --> CodeIgniter\Exceptions\CriticalError: The required PHP extension "pgsql" is not loaded. Install and enable it to use "Postgre" driver.
+[Method: POST, Route: visit-count]
+in SYSTEMPATH\Database\Database.php on line 182.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('Postgre')
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 APPPATH\Controllers\Thoughts\thoughts.php(143): CodeIgniter\Database\Config::connect()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 12:38:00 --> CodeIgniter\Exceptions\CriticalError: The required PHP extension "pgsql" is not loaded. Install and enable it to use "Postgre" driver.
+[Method: POST, Route: visit-count]
+in SYSTEMPATH\Database\Database.php on line 182.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('Postgre')
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 APPPATH\Controllers\Thoughts\thoughts.php(143): CodeIgniter\Database\Config::connect()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 13:42:53 --> CodeIgniter\Exceptions\CriticalError: The required PHP extension "pgsql" is not loaded. Install and enable it to use "Postgre" driver.
+[Method: POST, Route: visit-count]
+in SYSTEMPATH\Database\Database.php on line 182.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('Postgre')
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 APPPATH\Controllers\Thoughts\thoughts.php(143): CodeIgniter\Database\Config::connect()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

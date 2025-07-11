@@ -1,0 +1,12 @@
+CRITICAL - 2025-07-10 11:40:27 --> CodeIgniter\Exceptions\CriticalError: The required PHP extension "pgsql" is not loaded. Install and enable it to use "Postgre" driver.
+[Method: POST, Route: visit-count]
+in SYSTEMPATH\Database\Database.php on line 182.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('Postgre')
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 APPPATH\Controllers\Thoughts\thoughts.php(143): CodeIgniter\Database\Config::connect()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Thoughts\Thoughts->visitCount()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Thoughts\Thoughts))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
