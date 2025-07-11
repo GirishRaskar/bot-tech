@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cosmic Friend</title>
 
+  <script data-goatcounter="https://bot-tech.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
   <link rel="icon" type="image/jpg" href="<?= base_url('public/astro.jpg') ?>">
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
