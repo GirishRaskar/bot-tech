@@ -9,6 +9,39 @@ use CodeIgniter\Database\Config;
  */
 class Database extends Config
 {
+    public array $default;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->default = [
+            'DSN'          => '',
+            'hostname'     => env('DB_HOST', 'localhost'),
+            'username'     => env('DB_USERNAME', 'postgres'),
+            'password'     => env('DB_PASSWORD', ''),
+            'database'     => env('DB_DATABASE', 'mydb'),
+            'DBDriver'     => 'Postgre',
+            'DBPrefix'     => '',
+            'pConnect'     => false,
+            'DBDebug'      => (ENVIRONMENT !== 'production'),
+            'charset'      => 'utf8',
+            'DBCollat'     => 'utf8_general_ci',
+            'swapPre'      => '',
+            'encrypt'      => false,
+            'compress'     => false,
+            'strictOn'     => false,
+            'failover'     => [],
+            'port'         => 5432,
+            'numberNative' => false,
+            'foundRows'    => false,
+            'dateFormat'   => [
+                'date'     => 'Y-m-d',
+                'datetime' => 'Y-m-d H:i:s',
+                'time'     => 'H:i:s',
+            ],
+        ];
+    }
     /**
      * The directory that holds the Migrations and Seeds directories.
      */
@@ -24,32 +57,32 @@ class Database extends Config
      *
      * @var array<string, mixed>
      */
-    public array $default = [
-        'DSN'          => '',
-        'hostname'     => '',
-        'username'     => '',
-        'password'     => '',
-        'database'     => '',
-        'DBDriver'     => '',
-        'DBPrefix'     => '',
-        'pConnect'     => false,
-        'DBDebug'      => true,
-        'charset'      => 'utf8mb4',
-        'DBCollat'     => 'utf8mb4_general_ci',
-        'swapPre'      => '',
-        'encrypt'      => false,
-        'compress'     => false,
-        'strictOn'     => false,
-        'failover'     => [],
-        'port'         => 5432,
-        'numberNative' => false,
-        'foundRows'    => false,
-        'dateFormat'   => [
-            'date'     => 'Y-m-d',
-            'datetime' => 'Y-m-d H:i:s',
-            'time'     => 'H:i:s',
-        ],
-    ];
+    // public array $default = [
+    //     'DSN'          => '',
+    //     'hostname'     => '',
+    //     'username'     => '',
+    //     'password'     => '',
+    //     'database'     => '',
+    //     'DBDriver'     => '',
+    //     'DBPrefix'     => '',
+    //     'pConnect'     => false,
+    //     'DBDebug'      => true,
+    //     'charset'      => 'utf8mb4',
+    //     'DBCollat'     => 'utf8mb4_general_ci',
+    //     'swapPre'      => '',
+    //     'encrypt'      => false,
+    //     'compress'     => false,
+    //     'strictOn'     => false,
+    //     'failover'     => [],
+    //     'port'         => 5432,
+    //     'numberNative' => false,
+    //     'foundRows'    => false,
+    //     'dateFormat'   => [
+    //         'date'     => 'Y-m-d',
+    //         'datetime' => 'Y-m-d H:i:s',
+    //         'time'     => 'H:i:s',
+    //     ],
+    // ];
 
     //    /**
     //     * Sample database connection for SQLite3.
