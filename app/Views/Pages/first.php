@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cosmic Friend</title>
 
+  <meta name="description" content="Cosmic Friend delivers calming, personalized motivational thoughts based on your current mood. A peaceful companion to support your mental clarity." />
+
+  
+  <meta name="keywords" content="motivational quotes, calming thoughts, daily affirmations, peace of mind, mental wellness, inspiration, spiritual quotes, cosmic friend" />
+  <meta name="robots" content="index, follow" />
+
   <script data-goatcounter="https://bot-tech.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 
