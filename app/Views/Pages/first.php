@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cosmic Friend</title>
+  <title>Cosmic Companion</title>
 
   <meta name="description" content="Cosmic Friend delivers calming, personalized motivational thoughts based on your current mood. A peaceful companion to support your mental clarity." />
 
@@ -451,6 +451,22 @@
       display: block;
       height: 5vh;
     }
+
+    .step-indicator {
+  color: #a5b4fc;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 6px rgba(165, 180, 252, 0.3);
+  animation: glowStep 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowStep {
+  0% { text-shadow: 0 0 6px rgba(165, 180, 252, 0.2); }
+  100% { text-shadow: 0 0 12px rgba(165, 180, 252, 0.5); }
+}
+
   </style>
 </head>
 
@@ -473,8 +489,10 @@
   <button type="button" id="toggle-music-btn">🔇 Stop Music</button>
 
   <div id="userThought">
+    <div class="step-indicator">Step 2 of 2: Share your Mood</div>
+
     <form id="thoughtForm">
-      <h1>🌟 Your Cosmic Companion</h1>
+      <h1 id="cosmic-heading">🌟 Your Cosmic Companion</h1>
       <label for="userInp">Share what's weighing on your soul...</label>
       <input name="userInp" id="userInp" type="text" placeholder="e.g. I'm feeling lost in the darkness..." />
       <button type="submit" id="illuminate-btn">✨ Illuminate My Path</button>
@@ -597,6 +615,9 @@
           const $button = $(illuminateBtn);
           const $thought = $("#appendThought");
 
+          const guide = localStorage.getItem('cosmic_selected_voice');
+          formData.append('voice', guide);
+
           $button.prop('disabled', true).html('<span class="spinner"></span> Channeling cosmic wisdom...');
           $thought.fadeOut(300);
 
@@ -688,6 +709,20 @@
     });
   });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const selectedGuide = localStorage.getItem('cosmic_selected_voice');
+    const heading = document.getElementById("cosmic-heading");
+
+    if (selectedGuide && heading) {
+      const capitalized = selectedGuide.charAt(0).toUpperCase() + selectedGuide.slice(1);
+      heading.innerHTML = `🌟 Your Cosmic Companion as <span style="color:#93c5fd">${capitalized}</span>`;
+    }
+  });
+</script>
+
+
 
 </body>
 </html>

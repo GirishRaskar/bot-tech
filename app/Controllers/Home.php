@@ -6,6 +6,11 @@ class Home extends BaseController
 {
     public function index(): string
     {
+        return view('Pages/voice');
+    }
+
+    public function first(): string
+    {
         return view('Pages/first');
     }
 }
