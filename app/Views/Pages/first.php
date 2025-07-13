@@ -467,6 +467,28 @@
   100% { text-shadow: 0 0 12px rgba(165, 180, 252, 0.5); }
 }
 
+#backToGuideBtn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f3f4f6;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+#backToGuideBtn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(147, 197, 253, 0.2);
+}
+
   </style>
 </head>
 
@@ -487,6 +509,10 @@
 
   <!-- Music toggle button (hidden initially) -->
   <button type="button" id="toggle-music-btn">🔇 Stop Music</button>
+
+  <button onclick="goBackToGuide()" id="backToGuideBtn">
+    ⬅️ Back
+  </button>
 
   <div id="userThought">
     <div class="step-indicator">Step 2 of 2: Share your Mood</div>
@@ -720,6 +746,13 @@
       heading.innerHTML = `🌟 Your Cosmic Companion as <span style="color:#93c5fd">${capitalized}</span>`;
     }
   });
+</script>
+
+<script>
+  function goBackToGuide() {
+    localStorage.removeItem('cosmic_selected_voice');
+    window.location.href = "/";
+  }
 </script>
 
 
