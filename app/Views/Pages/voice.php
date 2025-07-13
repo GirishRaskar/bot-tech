@@ -264,7 +264,7 @@
   <script>
     function selectVoice(voice) {
       localStorage.setItem('cosmic_selected_voice', voice);
-      window.location.href = "/cosmic-local/first";
+      window.location.href = "/first";
     }
 
     // generate stars
